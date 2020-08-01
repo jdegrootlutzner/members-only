@@ -60,7 +60,7 @@ div {
   width: 450px;
   border: 2px solid red;
   padding: 7px 7px 0;
-  margin-bottom: 20px;
+   margin-bottom: 20px;
   background-color: #f0f0f0;
 
   h2 {
@@ -76,9 +76,111 @@ div {
   ul li {
     font-size: 12px;
     list-style: square;
+    line-height: 18px;
+
   }
+}
+
+.row-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.box-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  width: 100%;
+}
+.control {
+  margin: 10px;
+}
+.left {
+  justify-content: flex-start;
+}
+.right{
+  justify-content: flex-end;
+}
+
+footer {
+  border-top: #666 solid thin;
+  z-index: 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color:#ebebeb;
+  
+}
+
+
+header {
+  left: 30px;
+  right: 30px;
+  border-bottom: #666 solid thin;
+  
 }
 
 label {
   display: block;
+}
+
+#new-post-box{
+  position: fixed;
+  width: 120px;
+  bottom: 20px;
+  right: 8px;
+  height: 60px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  border: #666 dashed thin;
+  
+}
+#new-post-box:hover{
+  background-color:#666;
+  border: none;
+}
+
+#new-post-link a{
+  color: white;
+}
+#new-post-link a:visited{
+  color: white;
+}
+#new-post-link a:hover{
+  color: white;
+  background-color: #666;
+}
+
+
+.post-container {
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+  // border: dotted black thin;
+
+}
+
+.post-header {
+  display: flex;
+  flex-direction: row;
+}
+
+.post-author {
+  margin-left: 50px;
+}
+
+.post-title {
+  font-weight: bold;
+}
+
+.secret {
+  color: red;
+
+}
+
+.known {
+  color: green;
 }

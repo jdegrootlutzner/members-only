@@ -10,8 +10,39 @@
   </head>
 
   <body>
+    <header>
+      <div>
+        <%= link_to root_path do %>
+        <h1>MembersOnly</h1>
+        <%end%>
+      </div>
+    </header>
+
     <%= yield %>
-       <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
+
+    <footer class ="row-container">
+        <div class="box-container left">
+        <p class="notice"><%= notice %></p>
+         <p class="alert"><%= alert %></p>
+        </div>
+        <div class ="box-container right">
+        <% if user_signed_in? %>
+        <p class="control">
+        <%= link_to current_user.name, edit_user_registration_path, class: "button is-info" %>
+        </p>
+        <p class="control">
+        <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "button is-info" %>
+        </p>
+        <%else %>
+        <p class="control">
+        <%= link_to "Sign In", new_user_session_path, class: "button is-info" %>
+        </p>
+        <p class="control">
+        <%= link_to "Sign Up", new_user_registration_path, class: "button is-info" %>
+        </p>
+        <% end%>
+      </div>
+    </nav>
+    
   </body>
 </html>

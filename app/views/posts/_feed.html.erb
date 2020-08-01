@@ -1,0 +1,22 @@
+
+<% @posts.each do |post| %>
+    <div class="post-container">
+      <div class= "post-header">
+      <p class="post-title">
+        <%= post.title%>
+      </p>
+      <% if user_signed_in? %>
+      <p class="post-author">
+        Author: <span class="known"><%= post.user.username%></span>
+      </p>
+      <% else %>
+      <p class="post-author">
+        Author: <span class="secret"> Secret Member</span>
+      </p>
+      <% end %>
+      </div>
+      <p class="post-body">
+        <%= post.body%>
+      </p>
+    </div>
+<% end %>
